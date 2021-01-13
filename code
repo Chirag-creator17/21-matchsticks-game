@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int i,user,comp;
+    cout<<"WELCOME TO PLAY MATCHSTICK GAME"<<endl;
+    cout<<"Rules are:\n\t1)There are 21 matchsticks\n\t2)Any player will pick 1,2,3 or 4 matchstick at a time\n\t3)Whoever is forced to pick last matchstick losses the game\n ";
+    cout<<endl;
+    for(i=21;i>1;)
+    {
+        
+       l1:
+        cout<<"Remaining matchstick are : "<<i<<endl;
+        cout<<"Enter your choice from 1,2,3,4 : ";
+        cin>>user;
+        if((user>=5)||(user<1))
+        {
+            cout<<"\nWrong input enter between 1 to 4 \n";
+            goto l1;
+        }
+            
+        else 
+        {    
+            comp=5-user;
+            cout<<"Computers choice : "<<comp<<endl;
+            cout<<endl;
+            i=i-user-comp;
+            if(i==1)
+            {
+                cout<<endl<<"You lost, you took the last matchstick"<<endl;
+                break;
+            }
+        }
+        
+            
+    }
+    return 0;
+}
